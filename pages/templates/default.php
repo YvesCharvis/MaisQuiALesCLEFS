@@ -11,9 +11,21 @@
     	<link rel="stylesheet" type="text/css" href="css/style.css">   
   </head>
 <body>
+  <div class="header">
+  <img src="img/header.jpg">
+  </div>
 
-<?= $content ?>
-
+    <div class="navbar col-lg-4 col-md-3 col-xs-4">
+      <ul>
+          <li><a href="index.php"> Accueil</a></li>
+          <li><a href="?c=SignIn"> Sign In</a> | <a href="?c=SignUp">Sign Up</a></li>
+          <li><a href="?c=PlanSite">Plan Site</a></li>
+          <li><a href="?c=SemiAccessKeys">Clef Access</a></li>
+      </ul>
+    </div>
+<div class="contenaire col-lg-8 col-md-9 col-xs-8">
+    <?= $content ?>
+</div>
 </body>
 
 								<!-- SCRIPTS LOADS -->

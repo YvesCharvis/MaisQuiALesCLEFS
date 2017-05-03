@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.5.1
+- https://www.phpmyadmin.net
+-
+- Client :  127.0.0.1
+- Généré le :  Mer 03 Mai 2017 à 11:19
+- Version du serveur :  10.1.19-MariaDB
+- Version de PHP :  7.0.13
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="mqalc" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="cats">
+                CREATE TABLE `cats` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(150) NOT NULL,
+                  `password` varchar(255) NOT NULL,
+                  `num` int(10) NOT NULL,
+                  `clef_id` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="clefs">
+                CREATE TABLE `clefs` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) NOT NULL,
+                  `date` date NOT NULL,
+                  `name_id` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de données :  'mqalc'
+    -->
+    <database name="mqalc">
+        <!-- Table cats -->
+        <!-- Table clefs -->
+    </database>
+</pma_xml_export>

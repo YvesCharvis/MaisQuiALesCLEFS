@@ -12,15 +12,15 @@ class DBAuth
 		$this->db = $db;
 	}
 
-	public function login($username, $password)
+	public function connect($username, $password)
 	{
 		$user = $this->db->prepare("SELECT * 
-									FROM users 
+									FROM cats 
 									WHERE name = ?",
 									[$username], null, true);
 		if($user){
 			if ($user->password === sha1($password)) {
-				$_SESSION['Auth'] = $user->id;
+				$_SESSION['catsconnect'] = $user->id;
 				return true;
 			}
 		}
@@ -29,13 +29,13 @@ class DBAuth
 
 	public function logged()
 	{
-		return isset($_SESSION['Auth']);
+		return isset($_SESSION['catsconnect']);
 	}
 
 	public function getUserId()
 	{
 		if ($this->logged()) {
-			return $_SESSION['Auth'];
+			return $_SESSION['catsconnect'];
 		}else{
 			return false;
 		}
